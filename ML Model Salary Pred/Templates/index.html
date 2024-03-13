@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Salary Prediction</title>
+    <style>
+        .login {
+            width: 300px;
+            margin: auto;
+            text-align: center;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <h1>Salary Prediction</h1>
+        <form action="{{ url_for('predict') }}" method="POST">
+            <input type="text" name="Age" placeholder="Age" required="required" />
+            <input type="text" name="Gender" placeholder="Gender" required="required" />
+            <input type="text" name="Education" placeholder="Education" required="required" />
+            <input type="text" name="Job Title" placeholder="Job Title" required="required" />
+            <input type="text" name="Years of experience" placeholder="Years of experience" required="required" />
+            <button type="submit" class="btn">Predict</button>
+        </form>
+        <br>
+        <br>
+        {{ prediction_text }}
+    </div>
+</body>
+</html>
+
